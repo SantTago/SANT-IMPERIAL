@@ -1,0 +1,1931 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Conteúdo Instagram - Destaque sua Marca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            overflow-x: hidden;
+
+        }
+        
+        .imperial-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .imperial-gradient {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 15%, #2d1b69 35%, #1e3a8a 60%, #7c3aed 85%, #ec4899 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+        }
+        
+        .modern-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .tech-gradient {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .card-imperial {
+            background: linear-gradient(145deg, rgba(15, 15, 35, 0.95) 0%, rgba(26, 26, 46, 0.95) 50%, rgba(45, 27, 105, 0.85) 100%);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4), 0 0 0 1px rgba(236, 72, 153, 0.3), 0 0 30px rgba(124, 58, 237, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+        }
+        
+        .card-imperial:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 35px 70px -12px rgba(124, 58, 237, 0.6), 0 0 0 2px rgba(236, 72, 153, 0.8), 0 0 50px rgba(124, 58, 237, 0.4);
+        }
+        
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: linear-gradient(145deg, rgba(15, 15, 35, 0.9), rgba(26, 26, 46, 0.9));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .carousel-nav:hover {
+            transform: translateY(-50%) scale(1.2);
+            box-shadow: 0 15px 30px rgba(240, 147, 251, 0.6);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        
+        .carousel-prev {
+            left: 15px;
+        }
+        
+        .carousel-next {
+            right: 15px;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .carousel-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .carousel-dot.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+        }
+        
+        .pulse-imperial {
+            animation: pulseImperial 3s infinite;
+        }
+        
+        @keyframes pulseImperial {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.8), 0 0 0 0 rgba(236, 72, 153, 0.6);
+            }
+            50% { 
+                transform: scale(1.08);
+                box-shadow: 0 0 0 25px rgba(124, 58, 237, 0), 0 0 0 35px rgba(236, 72, 153, 0);
+            }
+        }
+        
+        .instagram-gradient {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+        
+        .area-card {
+            background: linear-gradient(145deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 26, 46, 0.9) 50%, rgba(45, 27, 105, 0.8) 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3), 0 0 20px rgba(236, 72, 153, 0.2);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            color: white;
+            backdrop-filter: blur(15px);
+        }
+        
+        .area-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(124, 58, 237, 0.5), 0 0 40px rgba(236, 72, 153, 0.4);
+            border-color: rgba(236, 72, 153, 0.6);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.08;
+            animation: float 8s ease-in-out infinite;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            33% { transform: translateY(-20px) rotate(120deg) scale(1.1); }
+            66% { transform: translateY(-40px) rotate(240deg) scale(0.9); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+        
+        .crown-decoration {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .imperial-border {
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .ceara-gradient {
+            background: linear-gradient(135deg, #22c55e 0%, #eab308 50%, #3b82f6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <!-- Floating Elements -->
+    <div class="floating-elements fixed inset-0 z-0">
+        <div class="floating-element text-6xl" style="top: 10%; left: 10%; animation: float 8s ease-in-out infinite;">👑</div>
+        <div class="floating-element text-4xl" style="top: 20%; right: 15%; animation: sparkle 6s ease-in-out infinite 1s;">💎</div>
+        <div class="floating-element text-5xl" style="bottom: 30%; left: 20%; animation: float 10s ease-in-out infinite 2s;">⭐</div>
+        <div class="floating-element text-3xl" style="bottom: 20%; right: 25%; animation: sparkle 7s ease-in-out infinite 3s;">✨</div>
+        <div class="floating-element text-4xl" style="top: 60%; left: 5%; animation: float 9s ease-in-out infinite 4s;">🏆</div>
+        <div class="floating-element text-3xl" style="top: 40%; right: 8%; animation: sparkle 8s ease-in-out infinite 5s;">💫</div>
+        <div class="floating-element text-2xl" style="top: 70%; right: 40%; animation: float 11s ease-in-out infinite 6s;">🌟</div>
+        <div class="floating-element text-4xl" style="bottom: 50%; left: 8%; animation: sparkle 9s ease-in-out infinite 7s;">🔥</div>
+    </div>
+
+    <!-- Header -->
+    <header class="min-h-screen imperial-gradient text-white relative overflow-hidden flex items-center">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-500/20 to-pink-600/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-violet-500/12 to-fuchsia-500/12 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-10 right-1/4 w-48 h-48 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 3s;"></div>
+            <div class="absolute bottom-10 left-1/3 w-64 h-64 bg-gradient-to-r from-rose-400/8 to-pink-500/8 rounded-full blur-2xl animate-pulse" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <!-- Geometric Patterns -->
+        <div class="absolute inset-0 opacity-15">
+            <div class="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-purple-400 rotate-45 animate-spin" style="animation-duration: 20s;"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-24 h-24 border-2 border-pink-400 rotate-12 animate-spin" style="animation-duration: 15s; animation-direction: reverse;"></div>
+            <div class="absolute top-1/2 right-1/3 w-16 h-16 border-2 border-fuchsia-400 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+            <div class="absolute top-3/4 left-1/5 w-20 h-20 border-2 border-violet-400 rotate-45 animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/5 right-1/5 w-12 h-12 border-2 border-cyan-400 animate-spin" style="animation-duration: 10s; animation-delay: 3s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <!-- Modern Logo Section -->
+            <div class="mb-16">
+                <div class="relative inline-block mb-8">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur-xl opacity-60 animate-pulse"></div>
+                    
+                    <div class="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-full p-8 shadow-2xl">
+                        <div class="text-4xl animate-bounce">👑</div>
+                        <div class="w-20 h-20 mx-auto mb-4">
+                            <svg class="w-full h-full instagram-gradient rounded-2xl p-3 shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Typography -->
+            <div class="space-y-8 mb-16">
+                <h1 class="imperial-font text-8xl lg:text-9xl font-black leading-none">
+                    <span class="block crown-decoration mb-4">SANT</span>
+                    <span class="block text-6xl lg:text-7xl opacity-90">IMPERIAL</span>
+                   <!-- <span class="block text-4xl lg:text-5xl font-light opacity-70 mt-4">de Conteúdo</span>-->
+                </h1>
+                
+                <div class="max-w-5xl mx-auto">
+                    <p class="text-2xl lg:text-3xl font-light leading-relaxed opacity-90 mb-8">
+                        <span class="crown-decoration font-bold">PARE DE PERDER CLIENTES</span> para concorrentes que dominam o Instagram
+                    </p>
+                    <p class="text-lg lg:text-xl opacity-75 max-w-3xl mx-auto mb-6">
+                        Enquanto você luta para criar conteúdo, seus concorrentes estão <span class="text-yellow-400 font-bold">FATURANDO MILHÕES</span> com estratégias que você não conhece
+                    </p>
+                    
+                    <!-- Urgência e Escassez -->
+                    <div class="bg-red-600/20 border-2 border-red-500 rounded-2xl p-6 mt-8 backdrop-blur-lg">
+                        <div class="flex items-center justify-center gap-4 mb-4">
+                            <div class="text-3xl animate-pulse">⚠️</div>
+                            <div class="text-xl font-bold text-red-300">ALERTA CRÍTICO</div>
+                            <div class="text-3xl animate-pulse">⚠️</div>
+                        </div>
+                        <p class="text-lg text-center">
+                            <span class="text-red-300 font-bold">APENAS 15 VAGAS DISPONÍVEIS</span> este mês para novos impérios.<br>
+                            <span class="text-yellow-300">Após isso, lista de espera até 2025!</span>
+                        </p>
+                        <div class="text-center mt-4">
+                            <div class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                                <span>🔥</span>
+                                <span id="countdown">11 vagas restantes</span>
+                                <span>🔥</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern CTA Section -->
+            <div class="space-y-8">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button onclick="scrollToPlans()" class="group relative overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 text-white px-12 py-6 rounded-2xl font-bold text-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span class="relative flex items-center gap-3">
+                            <span>Descobrir Planos</span>
+                            <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    
+                    <button onclick="startContact()" class="group bg-white/10 backdrop-blur-lg border border-white/20 text-white px-12 py-6 rounded-2xl font-semibold text-xl hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                        <span class="flex items-center gap-3">
+                            <span>Falar Conosco</span>
+                            <div class="w-6 h-6 rounded-full bg-green-500 animate-pulse"></div>
+                        </span>
+                    </button>
+                </div>
+                
+                
+<!------------------------------------------------------------------------------------------------>
+
+<div class="mt-16 pt-16 border-t border-white/20">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
+        <div class="text-center">
+            <div class="text-5xl font-black crown-decoration mb-2">847+</div>
+            <div class="text-sm opacity-70">Impérios Criados</div>
+            <div class="text-xs text-green-400 mt-1">+23% este mês</div>
+        </div>
+        <div class="text-center">
+            <div class="text-5xl font-black crown-decoration mb-2">R$ 47M</div>
+            <div class="text-sm opacity-70">Faturamento Gerado</div>
+            <div class="text-xs text-green-400 mt-1">Para nossos clientes</div>
+        </div>
+        <div class="text-center">
+            <div class="text-5xl font-black crown-decoration mb-2">312%</div>
+            <div class="text-sm opacity-70">Aumento Médio</div>
+            <div class="text-xs text-green-400 mt-1">Em engajamento</div>
+        </div>
+        <div class="text-center">
+            <div class="text-5xl font-black crown-decoration mb-2">99.7%</div>
+            <div class="text-sm opacity-70">Renovação</div>
+            <div class="text-xs text-green-400 mt-1">Taxa de satisfação</div>
+        </div>
+    </div>
+    
+<!------------------------------------------------------------------------------------------------>
+
+  <div class="container mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">⚡ TRANSFORME SEU NEGÓCIO EM 30 DIAS ⚡</h2>
+        <p class="text-xl opacity-90 mb-4">Mais de <span class="text-yellow-300 font-bold">847 profissionais</span> já multiplicaram seu faturamento</p>
+        
+        <div class="bg-white rounded-xl p-6 max-w-md mx-auto shadow-2xl">
+            <div class="flex items-center justify-center gap-3 mb-3">
+                <svg class="w-8 h-8" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                <span class="text-gray-800 font-semibold text-lg">Avaliações do Google</span>
+            </div>
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <span class="text-3xl font-bold text-gray-800">4.9</span>
+                <div class="flex text-yellow-400 text-xl">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="text-gray-600 text-sm">Baseado em 847 avaliações</p>
+            <div class="mt-3 space-y-1">
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="w-8 text-gray-600">5</span>
+                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 94%"></div>
+                    </div>
+                    <span class="text-gray-600">(796)</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="w-8 text-gray-600">4</span>
+                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-400 h-2 rounded-full" style="width: 4%"></div>
+                    </div>
+                    <span class="text-gray-600">(34)</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="w-8 text-gray-600">3</span>
+                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                        <div class="bg-yellow-400 h-2 rounded-full" style="width: 1%"></div>
+                    </div>
+                    <span class="text-gray-600">(9)</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="w-8 text-gray-600">2</span>
+                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                        <div class="bg-orange-400 h-2 rounded-full" style="width: 0.5%"></div>
+                    </div>
+                    <span class="text-gray-600">(4)</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="w-8 text-gray-600">1</span>
+                    <div class="flex-1 bg-gray-200 rounded-full h-2">
+                        <div class="bg-red-400 h-2 rounded-full" style="width: 0.5%"></div>
+                    </div>
+                    <span class="text-gray-600">(4)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex overflow-x-auto snap-x snap-mandatory pb-4 space-x-6 md:grid md:grid-cols-3 md:space-x-0 md:gap-6 max-w-6xl mx-auto">
+        
+        <div class="depoimento bg-white rounded-2xl p-6 shadow-lg flex-shrink-0 w-[85%] sm:w-[90%] md:w-auto snap-center hover:shadow-xl transition-all duration-300" **data-id="carlos"**>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">CS</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="font-bold text-gray-800">Dr. Carlos Silva</div>
+                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                    <div class="text-xs text-gray-500">há 2 semanas • Cardiologista CRM 12345-SP</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-3">"🚀 RESULTADO INACREDITÁVEL! Com a gestão profissional da minha página, minha agenda <strong>TRIPLICOU</strong> em apenas 60 dias. A agilidade na comunicação e nas correções faz toda a diferença! Meu faturamento passou de R$ 45k para <strong>R$ 135k mensais</strong>. Melhor investimento da minha carreira médica! 💰"</p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+                <div class="flex items-center gap-4">
+                    <button class="**like-button** flex items-center gap-1 hover:text-blue-600">
+                        <svg class="**like-icon** w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        <span class="**like-count**">Útil (47)</span>
+                    </button>
+                    <span>•</span>
+                    <span>Cliente verificado ✓</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="depoimento bg-white rounded-2xl p-6 shadow-lg flex-shrink-0 w-[85%] sm:w-[90%] md:w-auto snap-center hover:shadow-xl transition-all duration-300" **data-id="ana"**>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center text-white font-bold text-lg">AR</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="font-bold text-gray-800">Ana Rodrigues</div>
+                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                    <div class="text-xs text-gray-500">há 1 semana • Estética Avançada CREF 089456</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-3">"💎 SIMPLESMENTE PERFEITO! O design é de alta qualidade e a rapidez em atender minhas solicitações me permitiu faturar <strong>R$ 180 MIL A MAIS</strong> este mês! 🤑 O retorno sobre o investimento foi IMEDIATO! Minha lista de espera tem 3 meses. Recomendo de olhos fechados! 🔥"</p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+                <div class="flex items-center gap-4">
+                    <button class="**like-button** flex items-center gap-1 hover:text-blue-600">
+                        <svg class="**like-icon** w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        <span class="**like-count**">Útil (89)</span>
+                    </button>
+                    <span>•</span>
+                    <span>Cliente verificado ✓</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="depoimento bg-white rounded-2xl p-6 shadow-lg flex-shrink-0 w-[85%] sm:w-[90%] md:w-auto snap-center hover:shadow-xl transition-all duration-300" **data-id="roberto"**>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg">RM</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="font-bold text-gray-800">Roberto Mendes</div>
+                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                    <div class="text-xs text-gray-500">há 3 dias • Imobiliária Premium CRECI 45789</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-3">"🏠 MUDOU MINHA VIDA! Antes, a comunicação era lenta. Agora, as ordens de serviço são executadas com RAPIDEZ e o profissionalismo da equipe me ajudou a vender <strong>47 IMÓVEIS</strong> em apenas 3 meses! 📈 Meu ticket médio subiu 40%. Investimento que se paga sozinho! 💪"</p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+                <div class="flex items-center gap-4">
+                    <button class="**like-button** flex items-center gap-1 hover:text-blue-600">
+                        <svg class="**like-icon** w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        <span class="**like-count**">Útil (63)</span>
+                    </button>
+                    <span>•</span>
+                    <span>Cliente verificado ✓</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="depoimento bg-white rounded-2xl p-6 shadow-lg flex-shrink-0 w-[85%] sm:w-[90%] md:w-auto snap-center hover:shadow-xl transition-all duration-300" **data-id="marina"**>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg">MC</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="font-bold text-gray-800">Dra. Marina Costa</div>
+                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                    <div class="text-xs text-gray-500">há 5 dias • Dermatologista CRM 67890-RJ</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-3">"📱 EXPLOSÃO NAS REDES! Em apenas 4 meses, meu Instagram passou de 2k para <strong>25K SEGUIDORES</strong>! 🚀 O engajamento aumentou 800% e consegui <strong>240 NOVOS PACIENTES</strong> só através das redes sociais. Investimento que se paga sozinho! Agora sou referência em dermatologia! ✨"</p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+                <div class="flex items-center gap-4">
+                    <button class="**like-button** flex items-center gap-1 hover:text-blue-600">
+                        <svg class="**like-icon** w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        <span class="**like-count**">Útil (124)</span>
+                    </button>
+                    <span>•</span>
+                    <span>Cliente verificado ✓</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="depoimento bg-white rounded-2xl p-6 shadow-lg flex-shrink-0 w-[85%] sm:w-[90%] md:w-auto snap-center hover:shadow-xl transition-all duration-300" **data-id="lucas"**>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-lg">LF</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="font-bold text-gray-800">Lucas Ferreira</div>
+                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                    <div class="text-xs text-gray-500">há 4 dias • Personal Trainer CREF 123456</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-3">"💪 DE ZERO A HERÓI! Minha agenda estava sempre vazia. Depois da gestão profissional, tenho <strong>LISTA DE ESPERA</strong> de 2 meses! 🔥 Consegui aumentar meus preços em 60% e ainda assim a demanda só cresce. <strong>MELHOR INVESTIMENTO</strong> que já fiz na vida! 🏆"</p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+                <div class="flex items-center gap-4">
+                    <button class="**like-button** flex items-center gap-1 hover:text-blue-600">
+                        <svg class="**like-icon** w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        <span class="**like-count**">Útil (78)</span>
+                    </button>
+                    <span>•</span>
+                    <span>Cliente verificado ✓</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="depoimento bg-white rounded-2xl p-6 shadow-lg flex-shrink-0 w-[85%] sm:w-[90%] md:w-auto snap-center hover:shadow-xl transition-all duration-300" **data-id="camila"**>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-lg">CS</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="font-bold text-gray-800">Camila Santos</div>
+                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                    <div class="text-xs text-gray-500">há 6 dias • Nutricionista CRN 98765</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-3">"🥗 TRANSFORMAÇÃO TOTAL! Saí de 15 consultas por mês para <strong>120 CONSULTAS</strong>! 📈 O conteúdo é tão bom que virei REFERÊNCIA na minha cidade. Meu faturamento multiplicou por <strong>8X</strong> e agora tenho uma equipe de 3 pessoas trabalhando comigo! Vida nova! 🎉"</p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+                <div class="flex items-center gap-4">
+                    <button class="**like-button** flex items-center gap-1 hover:text-blue-600">
+                        <svg class="**like-icon** w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                        <span class="**like-count**">Útil (156)</span>
+                    </button>
+                    <span>•</span>
+                    <span>Cliente verificado ✓</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Seleciona todos os botões que têm a classe 'like-button'
+    const likeButtons = document.querySelectorAll('.like-button');
+
+    // Para cada botão de "Útil" que encontrar, execute o seguinte código
+    likeButtons.forEach(button => {
+        const testimonial = button.closest('.depoimento');
+        const id = testimonial.dataset.id;
+        const likeCountSpan = button.querySelector('.like-count');
+        const initialLikesText = likeCountSpan.textContent;
+        // Pega o número inicial (ex: "Útil (47)") e extrai apenas o número
+        const initialLikes = parseInt(initialLikesText.match(/\d+/)[0]);
+        let likes = initialLikes;
+        
+        // Verifica se o usuário já clicou neste botão antes
+        const hasLiked = localStorage.getItem(`liked-${id}`);
+        if (hasLiked === 'true') {
+            // Se ele já clicou, muda o visual do botão e desabilita ele
+            button.classList.add('text-blue-600', 'font-bold');
+            button.querySelector('.like-icon').setAttribute('fill', 'currentColor');
+            button.querySelector('.like-icon').setAttribute('stroke', 'none');
+            button.disabled = true;
+        }
+
+        // Adiciona um "ouvinte" de evento de clique para o botão
+        button.addEventListener('click', () => {
+            // Se o botão ainda não foi clicado por este usuário
+            if (localStorage.getItem(`liked-${id}`) !== 'true') {
+                // Passo 1: Aumenta o número em 1
+                likes++;
+                
+                // Passo 2: Atualiza o texto que aparece na tela
+                likeCountSpan.textContent = `Útil (${likes})`;
+
+                // Passo 3: Salva no navegador para "lembrar" que o usuário clicou
+                localStorage.setItem(`liked-${id}`, 'true');
+
+                // Passo 4: Muda o visual do botão para indicar que ele já foi clicado
+                button.classList.add('text-blue-600', 'font-bold');
+                button.querySelector('.like-icon').setAttribute('fill', 'currentColor');
+                button.querySelector('.like-icon').setAttribute('stroke', 'none');
+
+                // Passo 5: Desabilita o botão para impedir novos cliques
+                button.disabled = true;
+            }
+        });
+    });
+</script>
+<!------------------------------------------------------------------------------------------------>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Ceará -->
+    <section class="py-24 bg-gradient-to-b from-green-600/20 via-yellow-500/10 to-blue-600/20 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-8xl mb-8">🏖️</div>
+                <h2 class="imperial-font text-7xl font-bold mb-8">
+                    <span class="bg-gradient-to-r from-green-400 via-yellow-400 to-blue-400 bg-clip-text text-transparent">100% CEARENSE</span>
+                </h2>
+                <p class="text-2xl text-white max-w-4xl mx-auto leading-relaxed mb-12">
+                    Somos a <span class="font-bold text-yellow-400">ÚNICA agência imperial</span> especializada exclusivamente em negócios cearenses! 
+                    Conhecemos cada cantinho da nossa terra e sabemos exatamente como fazer seu negócio <span class="font-bold text-green-400">DOMINAR</span> o mercado local.
+                </p>
+                
+                <!-- Bandeira do Ceará Estilizada -->
+                <div class="flex justify-center mb-12">
+                    <div class="relative">
+                        <div class="w-32 h-20 bg-gradient-to-r from-green-500 via-yellow-400 to-blue-500 rounded-lg shadow-2xl border-4 border-white/20"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl">⭐</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cidades Atendidas -->
+            <div class="max-w-7xl mx-auto">
+                <h3 class="imperial-font text-4xl font-bold text-center mb-12 text-yellow-400">Cidades que Dominamos</h3>
+                
+                <!-- Grid de Cidades -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-16">
+                    <!-- Principais Cidades -->
+                    <div class="bg-gradient-to-br from-blue-600/30 to-cyan-600/30 backdrop-blur-xl border border-blue-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏙️</div>
+                        <div class="font-bold text-lg">Fortaleza</div>
+                        <div class="text-sm opacity-70">Capital Imperial</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-600/30 to-emerald-600/30 backdrop-blur-xl border border-green-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏭</div>
+                        <div class="font-bold text-lg">Caucaia</div>
+                        <div class="text-sm opacity-70">Região Metropolitana</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-xl border border-orange-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏖️</div>
+                        <div class="font-bold text-lg">Aquiraz</div>
+                        <div class="text-sm opacity-70">Litoral Leste</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-600/30 to-pink-600/30 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌊</div>
+                        <div class="font-bold text-lg">Maracanaú</div>
+                        <div class="text-sm opacity-70">Grande Fortaleza</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-600/30 to-orange-600/30 backdrop-blur-xl border border-yellow-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏛️</div>
+                        <div class="font-bold text-lg">Sobral</div>
+                        <div class="text-sm opacity-70">Norte Cearense</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-teal-600/30 to-blue-600/30 backdrop-blur-xl border border-teal-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌴</div>
+                        <div class="font-bold text-lg">Juazeiro do Norte</div>
+                        <div class="text-sm opacity-70">Cariri</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-indigo-600/30 to-purple-600/30 backdrop-blur-xl border border-indigo-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏞️</div>
+                        <div class="font-bold text-lg">Crato</div>
+                        <div class="text-sm opacity-70">Região do Cariri</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-rose-600/30 to-pink-600/30 backdrop-blur-xl border border-rose-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌺</div>
+                        <div class="font-bold text-lg">Itapipoca</div>
+                        <div class="text-sm opacity-70">Litoral Norte</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cyan-600/30 to-teal-600/30 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏝️</div>
+                        <div class="font-bold text-lg">Maranguape</div>
+                        <div class="text-sm opacity-70">Serra de Maranguape</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-emerald-600/30 to-green-600/30 backdrop-blur-xl border border-emerald-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌿</div>
+                        <div class="font-bold text-lg">Iguatu</div>
+                        <div class="text-sm opacity-70">Centro-Sul</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-amber-600/30 to-yellow-600/30 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏜️</div>
+                        <div class="font-bold text-lg">Quixadá</div>
+                        <div class="text-sm opacity-70">Sertão Central</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-lime-600/30 to-green-600/30 backdrop-blur-xl border border-lime-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌾</div>
+                        <div class="font-bold text-lg">Canindé</div>
+                        <div class="text-sm opacity-70">Sertão dos Inhamuns</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-sky-600/30 to-blue-600/30 backdrop-blur-xl border border-sky-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏖️</div>
+                        <div class="font-bold text-lg">Aracati</div>
+                        <div class="text-sm opacity-70">Litoral Leste</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-violet-600/30 to-purple-600/30 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌸</div>
+                        <div class="font-bold text-lg">Russas</div>
+                        <div class="text-sm opacity-70">Vale do Jaguaribe</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-fuchsia-600/30 to-pink-600/30 backdrop-blur-xl border border-fuchsia-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌅</div>
+                        <div class="font-bold text-lg">Crateús</div>
+                        <div class="text-sm opacity-70">Sertão dos Inhamuns</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-red-600/30 to-rose-600/30 backdrop-blur-xl border border-red-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏔️</div>
+                        <div class="font-bold text-lg">Guaramiranga</div>
+                        <div class="text-sm opacity-70">Serra de Baturité</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-600/30 to-amber-600/30 backdrop-blur-xl border border-orange-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌄</div>
+                        <div class="font-bold text-lg">Pacatuba</div>
+                        <div class="text-sm opacity-70">Região Metropolitana</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-emerald-600/30 to-teal-600/30 backdrop-blur-xl border border-emerald-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏕️</div>
+                        <div class="font-bold text-lg">Eusébio</div>
+                        <div class="text-sm opacity-70">Grande Fortaleza</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-600/30 to-indigo-600/30 backdrop-blur-xl border border-blue-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌊</div>
+                        <div class="font-bold text-lg">Paracuru</div>
+                        <div class="text-sm opacity-70">Litoral Oeste</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-600/30 to-violet-600/30 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-4 text-center text-white hover:scale-105 transition-all duration-300">
+                        <div class="text-3xl mb-2">🏄‍♂️</div>
+                        <div class="font-bold text-lg">Jericoacoara</div>
+                        <div class="text-sm opacity-70">Paraíso Mundial</div>
+                    </div>
+                </div>
+                
+                <!-- Mais Cidades -->
+                <div class="text-center mb-12">
+                    <div class="bg-gradient-to-r from-yellow-500/20 to-green-500/20 backdrop-blur-xl border border-yellow-500/30 rounded-3xl p-8 max-w-4xl mx-auto">
+                        <h4 class="text-2xl font-bold text-yellow-400 mb-4">E MUITO MAIS!</h4>
+                        <div class="grid grid-cols-3 md:grid-cols-6 gap-4 text-white">
+                            <div class="text-center">
+                                <div class="font-semibold">Horizonte</div>
+                                <div class="text-sm opacity-70">Região Metro</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">São Gonçalo</div>
+                                <div class="text-sm opacity-70">Grande Fortaleza</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Cascavel</div>
+                                <div class="text-sm opacity-70">Litoral Leste</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Barbalha</div>
+                                <div class="text-sm opacity-70">Cariri</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Tianguá</div>
+                                <div class="text-sm opacity-70">Serra da Ibiapaba</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Camocim</div>
+                                <div class="text-sm opacity-70">Litoral Norte</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Icó</div>
+                                <div class="text-sm opacity-70">Centro-Sul</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Limoeiro do Norte</div>
+                                <div class="text-sm opacity-70">Vale do Jaguaribe</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Acaraú</div>
+                                <div class="text-sm opacity-70">Litoral Norte</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Viçosa do Ceará</div>
+                                <div class="text-sm opacity-70">Serra da Ibiapaba</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Morada Nova</div>
+                                <div class="text-sm opacity-70">Vale do Jaguaribe</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-semibold">Tauá</div>
+                                <div class="text-sm opacity-70">Sertão dos Inhamuns</div>
+                            </div>
+                        </div>
+                        <p class="text-lg mt-6 text-gray-300">
+                            <span class="font-bold text-green-400">+ Todas as 184 cidades cearenses!</span><br>
+                            Se você é do Ceará, nós dominamos seu território! 🏆
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Vantagens de ser Cearense -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-green-600/30 to-emerald-600/30 backdrop-blur-xl border border-green-500/30 rounded-3xl p-8 text-center text-white">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h4 class="text-2xl font-bold mb-4 text-green-300">Conhecemos Seu Povo</h4>
+                        <p class="text-gray-300">Sabemos exatamente como o cearense pensa, age e compra. Criamos conteúdo que fala direto ao coração do nosso povo!</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-600/30 to-orange-600/30 backdrop-blur-xl border border-yellow-500/30 rounded-3xl p-8 text-center text-white">
+                        <div class="text-5xl mb-4">🌅</div>
+                        <h4 class="text-2xl font-bold mb-4 text-yellow-300">Horários Locais</h4>
+                        <p class="text-gray-300">Postamos nos horários que o cearense está online! Conhecemos os hábitos digitais da nossa terra como ninguém.</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-600/30 to-cyan-600/30 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center text-white">
+                        <div class="text-5xl mb-4">🏆</div>
+                        <h4 class="text-2xl font-bold mb-4 text-blue-300">Cultura Local</h4>
+                        <p class="text-gray-300">Incorporamos a cultura, tradições e linguagem cearense em cada post. Seu público se identifica 100%!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Objeções -->
+    <section class="py-24 bg-gradient-to-b from-red-900/20 via-black to-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-6xl mb-6">🚨</div>
+                <h2 class="imperial-font text-5xl font-bold mb-8 text-red-300">PARE! Antes de Sair...</h2>
+                <p class="text-2xl text-gray-300 max-w-4xl mx-auto">Sabemos exatamente o que está passando na sua cabeça. Vamos resolver suas dúvidas AGORA:</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Objeção 1 -->
+                <div class="bg-gradient-to-br from-red-900/30 to-gray-900/50 backdrop-blur-xl border border-red-500/30 rounded-3xl p-8 text-white">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="text-4xl">😰</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">"É muito caro..."</h3>
+                            <p class="text-gray-300">Você acha R$ 200-250/mês caro?</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-600/20 border border-green-500 rounded-2xl p-6">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">REALIDADE:</h4>
+                        <ul class="space-y-2 text-green-100">
+                            <li>• <span class="font-bold">1 cliente novo</span> já paga o investimento</li>
+                            <li>• Nossos clientes faturam <span class="font-bold text-yellow-400">R$ 15.000-180.000 EXTRA</span> por mês</li>
+                            <li>• ROI médio de <span class="font-bold text-yellow-400">2.847%</span> em 90 dias</li>
+                            <li>• Você gasta mais em almoços que isso!</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-yellow-500/20 rounded-xl">
+                            <p class="text-center font-bold">💰 <span class="text-yellow-400">CUSTO DE NÃO FAZER:</span> R$ 50.000+ perdidos por mês!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 2 -->
+                <div class="bg-gradient-to-br from-red-900/30 to-gray-900/50 backdrop-blur-xl border border-red-500/30 rounded-3xl p-8 text-white">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="text-4xl">⏰</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">"Não tenho tempo..."</h3>
+                            <p class="text-gray-300">Exatamente por isso você PRECISA de nós!</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-600/20 border border-blue-500 rounded-2xl p-6">
+                        <h4 class="text-xl font-bold text-blue-300 mb-4">SOLUÇÃO:</h4>
+                        <ul class="space-y-2 text-blue-100">
+                            <li>• <span class="font-bold">ZERO trabalho</span> da sua parte</li>
+                            <li>• Nós criamos, postamos e gerenciamos <span class="font-bold">TUDO</span></li>
+                            <li>• Você só <span class="font-bold text-yellow-400">COLHE OS RESULTADOS</span></li>
+                            <li>• Economize <span class="font-bold">20+ horas</span> por semana</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-green-500/20 rounded-xl">
+                            <p class="text-center font-bold">⚡ Enquanto você dorme, nós <span class="text-green-400">VENDEMOS POR VOCÊ!</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 3 -->
+                <div class="bg-gradient-to-br from-red-900/30 to-gray-900/50 backdrop-blur-xl border border-red-500/30 rounded-3xl p-8 text-white">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="text-4xl">🤔</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">"Vou pensar..."</h3>
+                            <p class="text-gray-300">Enquanto você pensa, seus concorrentes AGEM!</p>
+                        </div>
+                    </div>
+                    <div class="bg-purple-600/20 border border-purple-500 rounded-2xl p-6">
+                        <h4 class="text-xl font-bold text-purple-300 mb-4">URGÊNCIA REAL:</h4>
+                        <ul class="space-y-2 text-purple-100">
+                            <li>• <span class="font-bold text-red-400">Apenas 11 vagas</span> restantes este mês</li>
+                            <li>• Cada dia perdido = <span class="font-bold">R$ 1.600+ em vendas</span></li>
+                            <li>• Seus concorrentes já estão <span class="font-bold text-yellow-400">DOMINANDO</span></li>
+                            <li>• Lista de espera até <span class="font-bold">2025</span> após esgotar</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-red-500/20 rounded-xl">
+                            <p class="text-center font-bold">🔥 <span class="text-red-400">AÇÃO AGORA</span> ou <span class="text-gray-400">ARREPENDIMENTO DEPOIS!</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 4 -->
+                <div class="bg-gradient-to-br from-red-900/30 to-gray-900/50 backdrop-blur-xl border border-red-500/30 rounded-3xl p-8 text-white">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="text-4xl">😨</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-red-300 mb-2">"E se não funcionar?"</h3>
+                            <p class="text-gray-300">Temos 99.7% de taxa de renovação!</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-600/20 border border-green-500 rounded-2xl p-6">
+                        <h4 class="text-xl font-bold text-green-300 mb-4">GARANTIAS:</h4>
+                        <ul class="space-y-2 text-green-100">
+                            <li>• <span class="font-bold">847+ casos de sucesso</span> comprovados</li>
+                            <li>• <span class="font-bold text-yellow-400">99.7% de satisfação</span> dos clientes</li>
+                            <li>• Metodologia testada em <span class="font-bold">R$ 47 milhões</span> gerados</li>
+                            <li>• Suporte imperial <span class="font-bold">24/7</span></li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-yellow-500/20 rounded-xl">
+                            <p class="text-center font-bold">🛡️ <span class="text-yellow-400">RISCO ZERO:</span> Nosso histórico fala por si!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Urgente -->
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-red-600/30 to-orange-600/30 backdrop-blur-xl border-2 border-red-500 rounded-3xl p-8 max-w-4xl mx-auto">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="imperial-font text-4xl font-bold mb-6 text-red-300">ÚLTIMA CHANCE!</h3>
+                    <p class="text-xl mb-8">Não deixe seus concorrentes dominarem SEU mercado enquanto você hesita!</p>
+                    <button onclick="startContact()" class="bg-gradient-to-r from-red-500 to-orange-500 text-white px-16 py-6 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-300 shadow-2xl animate-pulse">
+                        🔥 GARANTIR MINHA VAGA AGORA! 🔥
+                    </button>
+                    <p class="text-sm mt-4 text-gray-400">⏰ Oferta válida apenas para as próximas 11 vagas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos" class="py-32 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            
+           <div class="text-center mb-20">
+    <div class="inline-block mb-8">
+        <div class="text-6xl mb-4 animate-bounce">👑</div>
+        <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+    <h2 class="imperial-font text-7xl lg:text-8xl font-black mb-8">
+        <span class="block crown-decoration">PLANOS</span>
+        <span class="block text-5xl lg:text-6xl opacity-80 font-light">de Conquista</span>
+    </h2>
+    <p class="text-2xl text-gray-300 max-w-2xl mx-auto">Escolha seu reino digital e domine o Instagram</p>
+</div>
+
+<div class="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto mb-20">
+    <div class="group relative">
+        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500/25 to-purple-600/25 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+        <div class="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-12 text-white hover:border-yellow-500/30 transition-all duration-500">
+            <div class="text-center mb-12">
+                <div class="relative inline-block mb-6">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-lg opacity-30"></div>
+                    <div class="relative text-6xl bg-gradient-to-r from-gray-700 to-gray-800 rounded-full w-24 h-24 flex items-center justify-center mx-auto">🏰</div>
+                </div>
+                <h3 class="imperial-font text-4xl font-bold mb-6 crown-decoration">Reino Essencial</h3>
+                <div class="space-y-2">
+                    <div class="text-6xl font-black crown-decoration">R$ 200</div>
+                    <div class="text-xl text-gray-400">/mês</div>
+                    <div class="text-sm text-gray-500 bg-gray-800/50 px-4 py-2 rounded-full inline-block">Ideal para começar</div>
+                </div>
+            </div>
+            <div class="space-y-6 mb-12">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">3 Posts Semanais</div>
+                        <div class="text-gray-400">Design, legendas e hashtags</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">3 Stories Semanais</div>
+                        <div class="text-gray-400">Conteúdo rápido e engajador</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 opacity-50">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Carrossel incluso</div>
+                        <div class="text-gray-500">Não incluso neste plano</div>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4 opacity-50">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Tráfego Pago</div>
+                        <div class="text-gray-500">Não incluso neste plano</div>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4 opacity-50">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Acompanhamento de Acertos</div>
+                        <div class="text-gray-500">Não incluso neste plano</div>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4 opacity-50">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Contato Direto via WhatsApp</div>
+                        <div class="text-gray-500">Não incluso neste plano</div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="selectPlan('essencial')" class="group/btn w-full relative overflow-hidden bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                <span class="relative">Conquistar Reino</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="group relative">
+        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500/25 to-purple-600/25 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+        <div class="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-12 text-white hover:border-yellow-500/30 transition-all duration-500">
+            <div class="text-center mb-12">
+                <div class="relative inline-block mb-6">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-lg opacity-30"></div>
+                    <div class="relative text-6xl bg-gradient-to-r from-gray-700 to-gray-800 rounded-full w-24 h-24 flex items-center justify-center mx-auto">⚜️</div>
+                </div>
+                <h3 class="imperial-font text-4xl font-bold mb-6 crown-decoration">Reino Nobre</h3>
+                <div class="space-y-2">
+                    <div class="text-6xl font-black crown-decoration">R$ 350</div>
+                    <div class="text-xl text-gray-400">/mês</div>
+                    <div class="text-sm bg-gray-800/50 px-4 py-2 rounded-full inline-block">Mais popular</div>
+                </div>
+            </div>
+            <div class="space-y-6 mb-12">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">3 Posts Semanais</div>
+                        <div class="text-gray-400">Design, legendas e hashtags</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">3 Stories Semanais</div>
+                        <div class="text-gray-400">Conteúdo com design e textos</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Carrossel Incluso</div>
+                        <div class="text-gray-400">Posts múltiplos para mais engajamento</div>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4 opacity-50">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Tráfego Pago</div>
+                        <div class="text-gray-500">Não incluso neste plano</div>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4 opacity-50">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Acompanhamento de Acertos</div>
+                        <div class="text-gray-500">Não incluso neste plano</div>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Contato Direto via WhatsApp</div>
+                        <div class="text-gray-400">Para dúvidas rápidas e suporte</div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="selectPlan('nobre')" class="group/btn w-full relative overflow-hidden bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                <span class="relative">Ascender ao Reino Nobre</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="group relative">
+        <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-bold text-sm shadow-2xl animate-pulse">
+                👑 MAIS MAJESTOSO
+            </div>
+        </div>
+        <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400/30 to-orange-500/30 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-all duration-500"></div>
+        <div class="relative bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-xl border-2 border-yellow-500/30 rounded-3xl p-12 text-white hover:border-yellow-500/50 transition-all duration-500">
+            <div class="text-center mb-12 mt-4">
+                <div class="relative inline-block mb-6">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-xl opacity-50"></div>
+                    <div class="relative text-6xl bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full w-24 h-24 flex items-center justify-center mx-auto text-black">🏛️</div>
+                </div>
+                <h3 class="imperial-font text-4xl font-bold mb-6 crown-decoration">Império Absoluto</h3>
+                <div class="space-y-2">
+                    <div class="text-6xl font-black crown-decoration">R$ 550</div>
+                    <div class="text-xl text-gray-400">/mês</div>
+                    <div class="text-sm bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full inline-block font-semibold">Mais escolhido</div>
+                </div>
+            </div>
+            <div class="space-y-6 mb-12">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Gestão Completa de Conteúdo</div>
+                        <div class="text-gray-400">Posts, carrosséis e stories inclusos</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Tráfego Pago Otimizado</div>
+                        <div class="text-gray-400">Criação de público-alvo e análise</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Acompanhamento de Acertos</div>
+                        <div class="text-gray-400">Análise e ajustes para maior precisão</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                        <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold mb-1">Contato Direto via WhatsApp</div>
+                        <div class="text-gray-400">Suporte prioritário e ágil</div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="selectPlan('absoluto')" class="group/btn w-full relative overflow-hidden bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                <span class="relative">Dominar Império</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<!------------------------------------------------------------------------------------>
+
+
+
+            <!-- Tráfego Pago - Modern Card -->
+            <div class="max-w-7xl mx-auto py-20">
+    <div class="text-center mb-16">
+        <div class="inline-block mb-8">
+            <div class="text-6xl mb-4 animate-bounce">🌐</div>
+            <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+        </div>
+        <h2 class="imperial-font text-7xl lg:text-8xl font-black mb-8">
+            <span class="block crown-decoration">PLANOS DE SITES</span>
+            <span class="block text-5xl lg:text-6xl opacity-80 font-light">Para Domínio Online</span>
+        </h2>
+        <p class="text-2xl text-gray-300 max-w-2xl mx-auto">Escolha o plano que vai transformar sua presença digital e atrair clientes de verdade.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+        <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/25 to-pink-600/25 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            <div class="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-12 text-white hover:border-purple-500/30 transition-all duration-500">
+                <div class="text-center mb-12">
+                    <div class="relative inline-block mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-lg opacity-30"></div>
+                        <div class="relative text-6xl bg-gradient-to-r from-gray-700 to-gray-800 rounded-full w-24 h-24 flex items-center justify-center mx-auto">📄</div>
+                    </div>
+                    <h3 class="imperial-font text-4xl font-bold mb-6 crown-decoration">Site Landing Page</h3>
+                    <div class="space-y-2">
+                        <div class="text-6xl font-black crown-decoration">R$ 497</div>
+                        <div class="text-xl text-gray-400">pagamento único</div>
+                        <div class="text-sm text-gray-500 bg-gray-800/50 px-4 py-2 rounded-full inline-block">Ideal para começar</div>
+                    </div>
+                </div>
+                <div class="space-y-6 mb-12">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Design Moderno</div>
+                            <div class="text-gray-400">Uma página de alta conversão</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Responsivo</div>
+                            <div class="text-gray-400">Funciona em celulares e tablets</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Otimização Básica SEO</div>
+                            <div class="text-gray-400">Pronto para ser encontrado no Google</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 opacity-50">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Suporte e Manutenção</div>
+                            <div class="text-gray-500">Não incluso</div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="selectPlan('landing')" class="group/btn w-full relative overflow-hidden bg-gradient-to-r from-purple-500 to-pink-500 text-black py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <span class="relative">Criar Landing Page</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="group relative">
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
+                <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-bold text-sm shadow-2xl animate-pulse">
+                    🏆 MAIS POPULAR
+                </div>
+            </div>
+            <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400/30 to-orange-500/30 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-all duration-500"></div>
+            <div class="relative bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-xl border-2 border-yellow-500/30 rounded-3xl p-12 text-white hover:border-yellow-500/50 transition-all duration-500">
+                <div class="text-center mb-12 mt-4">
+                    <div class="relative inline-block mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-xl opacity-50"></div>
+                        <div class="relative text-6xl bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full w-24 h-24 flex items-center justify-center mx-auto text-black">🏛️</div>
+                    </div>
+                    <h3 class="imperial-font text-4xl font-bold mb-6 crown-decoration">Site Corporativo</h3>
+                    <div class="space-y-2">
+                        <div class="text-6xl font-black crown-decoration">R$ 1.997</div>
+                        <div class="text-xl text-gray-400">pagamento único</div>
+                        <div class="text-sm bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full inline-block font-semibold">O Mais Escolhido</div>
+                    </div>
+                </div>
+                <div class="space-y-6 mb-12">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Até 5 Páginas</div>
+                            <div class="text-gray-400">Home, Sobre, Serviços, Contato, etc.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Design Personalizado</div>
+                            <div class="text-gray-400">Totalmente alinhado com sua marca</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Otimização Avançada SEO</div>
+                            <div class="text-gray-400">Para aparecer no topo das buscas</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Hospedagem por 1 ano</div>
+                            <div class="text-gray-400">E domínio personalizado (.com.br)</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Suporte Básico por 3 meses</div>
+                            <div class="text-gray-400">Pequenas alterações e dúvidas</div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="selectPlan('corporativo')" class="group/btn w-full relative overflow-hidden bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <span class="relative">Construir Meu Império</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="group relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/25 to-pink-600/25 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            <div class="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-12 text-white hover:border-purple-500/30 transition-all duration-500">
+                <div class="text-center mb-12">
+                    <div class="relative inline-block mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-lg opacity-30"></div>
+                        <div class="relative text-6xl bg-gradient-to-r from-gray-700 to-gray-800 rounded-full w-24 h-24 flex items-center justify-center mx-auto">🛍️</div>
+                    </div>
+                    <h3 class="imperial-font text-4xl font-bold mb-6 crown-decoration">Loja Virtual</h3>
+                    <div class="space-y-2">
+                        <div class="text-6xl font-black crown-decoration">R$ 4.997</div>
+                        <div class="text-xl text-gray-400">pagamento único</div>
+                        <div class="text-sm text-gray-500 bg-gray-800/50 px-4 py-2 rounded-full inline-block">Para Vendas Online</div>
+                    </div>
+                </div>
+                <div class="space-y-6 mb-12">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 0 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Design para E-commerce</div>
+                            <div class="text-gray-400">Focado em usabilidade e conversão</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Até 100 Produtos</div>
+                            <div class="text-gray-400">Configuração completa de catálogo</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Gateways de Pagamento</div>
+                            <div class="text-gray-400">Integração com Mercado Pago, etc.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">Cálculo de Frete Automático</div>
+                            <div class="text-gray-400">Integração com Correios e Jadlog</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-semibold mb-1">1 Ano de Suporte e Hospedagem</div>
+                            <div class="text-gray-400">E-mail corporativo e backups semanais</div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="selectPlan('ecommerce')" class="group/btn w-full relative overflow-hidden bg-gradient-to-r from-purple-500 to-pink-500 text-black py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <span class="relative">Lançar Minha Loja</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------------------------------->
+
+
+
+        </div>
+    </section>
+
+    <!-- Criação de Sites -->
+    <section class="py-24 bg-black relative">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-6xl mb-8">🏰</div>
+            <h2 class="imperial-font text-6xl font-bold mb-8 crown-decoration">Fortalezas Digitais Exclusivas</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">Para nossos súditos leais, criamos castelos digitais com arquitetura moderna e funcionalidade imperial. Sua fortaleza online complementará perfeitamente seu reino nas redes sociais.</p>
+            <button onclick="showSiteInfo()" class="gold-gradient text-black px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all duration-300 shadow-2xl">
+                Construir Fortaleza
+            </button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+<style>
+    .specialization-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.specialization-container h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.specialization-container p {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-bottom: 50px;
+}
+
+.realm-section {
+    margin-bottom: 60px;
+    background: linear-gradient(145deg, rgba(30, 10, 50, 0.8), rgba(60, 20, 100, 0.8));
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(100, 50, 200, 0.3);
+}
+
+.realm-title {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.realm-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #8a2be2, #4b0082); /* Roxo */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.carousel-item {
+    background-color: #2c1654; /* Fundo do card */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.carousel-content h3 {
+    font-size: 1.5em;
+    margin: 0 0 5px;
+    color: #8a2be2; /* Roxo */
+}
+
+.carousel-content p {
+    font-size: 1em;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Estilo do carrossel (Slick) */
+.slick-prev:before, .slick-next:before {
+    font-size: 40px;
+    color: #8a2be2 !important; /* Roxo */
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #8a2be2 !important; /* Roxo */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #4b0082 !important; /* Roxo mais escuro */
+}
+</style>
+
+<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+
+    <div class="specialization-container">
+        <h1>Nosso Portfólio de Conteúdo Estratégico</h1>
+        <p>Veja como transformamos presença digital em resultados para nossos clientes, com posts que educam, engajam e vendem.</p>
+
+
+
+
+
+        <div class="realm-section">
+            <h2 class="realm-title">Clínicas e Consultórios</h2>
+            <div class="carousel" id="clinics-carousel">
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/1.png" alt="Post que Tira Dúvidas de Pacientes">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/2.png" alt="Conteúdo de Serviços e Procedimentos">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/3.png" alt="Stories com Rotina da Clínica">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/4.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/5.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/6.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/7.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/8.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/9.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Clínicas e Consultórios/10.png" alt="Reels de Transformação e Resultados">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="realm-section">
+            <h2 class="realm-title">Escolas e Cursos</h2>
+            <div class="carousel" id="clinics-carousel">
+                <div class="carousel-item">
+                    <img src="Escolas e Cursos/1.png" alt="Post que Tira Dúvidas de Pacientes">
+                </div>
+                <div class="carousel-item">
+                    <img src="Escolas e Cursos/2.png" alt="Conteúdo de Serviços e Procedimentos">
+                </div>
+                <div class="carousel-item">
+                    <img src="Escolas e Cursos/3.png" alt="Stories com Rotina da Clínica">
+                </div>
+                <div class="carousel-item">
+                    <img src="Escolas e Cursos/4.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="Escolas e Cursos/5.png" alt="Reels de Transformação e Resultados">
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="realm-section">
+            <h2 class="realm-title">mobiliárias</h2>
+            <div class="carousel" id="clinics-carousel">
+                <div class="carousel-item">
+                    <img src="mobiliárias/1.png" alt="Post que Tira Dúvidas de Pacientes">
+                </div>
+                <div class="carousel-item">
+                    <img src="mobiliárias/2.png" alt="Conteúdo de Serviços e Procedimentos">
+                </div>
+                <div class="carousel-item">
+                    <img src="mobiliárias/3.png" alt="Stories com Rotina da Clínica">
+                </div>
+                <div class="carousel-item">
+                    <img src="mobiliárias/4.png" alt="Reels de Transformação e Resultados">
+                </div>
+                <div class="carousel-item">
+                    <img src="mobiliárias/5.png" alt="Reels de Transformação e Resultados">
+                </div>
+                 <div class="carousel-item">
+                    <img src="mobiliárias/6.png" alt="Reels de Transformação e Resultados">
+                </div>
+                 <div class="carousel-item">
+                    <img src="mobiliárias/7.png" alt="Reels de Transformação e Resultados">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+<!---------------------------------------------------------------------------->
+
+
+
+
+
+
+
+    <!-- Por Que Ter um Parceiro -->
+    <section class="py-24 imperial-gradient text-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="text-6xl mb-8">👑</div>
+                <h2 class="imperial-font text-6xl font-bold mb-12 crown-decoration">Por Que Escolher Nossa Corte Imperial?</h2>
+                <p class="text-2xl leading-relaxed mb-16 opacity-90">Ter um parceiro imperial de social media transcende a simples atualização de perfis. É ter uma corte dedicada a elevar sua marca ao status de realeza digital, criando conexões autênticas com seus súditos enquanto você governa seu negócio.</p>
+                
+                <div class="grid md:grid-cols-3 gap-12 mt-20">
+                    <div class="text-center glass-effect rounded-3xl p-8">
+                        <div class="gold-gradient rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">⏰</span>
+                        </div>
+                        <h3 class="imperial-font text-2xl font-bold mb-4 crown-decoration">Tempo Imperial</h3>
+                        <p class="text-lg opacity-90">Governe seu império enquanto cuidamos de sua presença digital com maestria real</p>
+                    </div>
+                    <div class="text-center glass-effect rounded-3xl p-8">
+                        <div class="gold-gradient rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">📈</span>
+                        </div>
+                        <h3 class="imperial-font text-2xl font-bold mb-4 crown-decoration">Crescimento Majestoso</h3>
+                        <p class="text-lg opacity-90">Estratégias imperiais que elevam seu engajamento aos céus da realeza digital</p>
+                    </div>
+                    <div class="text-center glass-effect rounded-3xl p-8">
+                        <div class="gold-gradient rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🎯</span>
+                        </div>
+                        <h3 class="imperial-font text-2xl font-bold mb-4 crown-decoration">Conteúdo Real</h3>
+                        <p class="text-lg opacity-90">Posts estratégicos que conquistam corações e mentes de seus súditos leais</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia e Risco Reverso -->
+    <section class="py-24 bg-gradient-to-b from-green-900/20 via-black to-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="text-8xl mb-8">🛡️</div>
+                <h2 class="imperial-font text-6xl font-bold mb-12 text-green-300">Garantia Imperial Blindada</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <!-- Garantia de Resultados -->
+                    <div class="bg-gradient-to-br from-green-900/30 to-emerald-900/30 backdrop-blur-xl border-2 border-green-500 rounded-3xl p-8 text-white">
+                        <div class="text-5xl mb-6">💎</div>
+                        <h3 class="imperial-font text-3xl font-bold mb-6 text-green-300">Garantia de Resultados</h3>
+                        <div class="space-y-4 text-left">
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">✅</div>
+                                <div>
+                                    <div class="font-bold text-lg">Aumento de 150% no engajamento</div>
+                                    <div class="text-gray-300">Ou devolvemos 100% do seu dinheiro</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">✅</div>
+                                <div>
+                                    <div class="font-bold text-lg">Pelo menos 5 novos clientes</div>
+                                    <div class="text-gray-300">Nos primeiros 90 dias ou reembolso total</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">✅</div>
+                                <div>
+                                    <div class="font-bold text-lg">ROI mínimo de 300%</div>
+                                    <div class="text-gray-300">Ou trabalhamos de graça até atingir</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-4 bg-green-500/20 rounded-2xl">
+                            <p class="font-bold text-lg">🔒 <span class="text-green-400">RISCO ZERO ABSOLUTO</span></p>
+                            <p class="text-sm mt-2">Se não ficar satisfeito em 30 dias, cancelamos sem perguntas e devolvemos tudo!</p>
+                        </div>
+                    </div>
+
+                    <!-- Garantia de Qualidade -->
+                    <div class="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-xl border-2 border-blue-500 rounded-3xl p-8 text-white">
+                        <div class="text-5xl mb-6">👑</div>
+                        <h3 class="imperial-font text-3xl font-bold mb-6 text-blue-300">Garantia de Excelência</h3>
+                        <div class="space-y-4 text-left">
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">⭐</div>
+                                <div>
+                                    <div class="font-bold text-lg">Posts aprovados por você</div>
+                                    <div class="text-gray-300">Revisões ilimitadas até ficar perfeito</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">⭐</div>
+                                <div>
+                                    <div class="font-bold text-lg">Suporte 24/7 prioritário</div>
+                                    <div class="text-gray-300">WhatsApp direto com nossa equipe</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">⭐</div>
+                                <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'979806817394ba13',t:'MTc1NjkzMTY0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
