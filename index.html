@@ -1080,6 +1080,381 @@
         </div>
     </section>
 
+
+
+<!------------------------------------------------------------------------------------------------>
+
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilização Geral da Seção de Vagas */
+        .secao-vagas {
+            padding: 80px 20px;
+            background-color: #0b0b1a;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .vagas-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Efeito de brilho de fundo */
+        .secao-vagas::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 230, 109, 0.1) 0%, transparent 70%);
+            animation: background-glow 10s infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes background-glow {
+            from {
+                transform: rotate(0deg);
+                opacity: 0.5;
+            }
+            to {
+                transform: rotate(360deg);
+                opacity: 0.8;
+            }
+        }
+
+        /* Estilização dos Painéis Individuais */
+        .painel-vagas {
+            flex: 1 1 450px;
+            background-color: rgba(26, 26, 46, 0.95);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            backdrop-filter: blur(5px);
+        }
+
+        .painel-vagas:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Animação de entrada (Fade-in on scroll) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .titulo-vagas {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ff5733;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .titulo-vagas::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ffe66d;
+            border-radius: 5px;
+        }
+
+        .aviso-vagas {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .lista-vagas {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 50px;
+        }
+
+        .item-vaga {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 18px 25px;
+            margin-bottom: 18px;
+            background-color: rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .item-vaga:hover {
+            border-color: #ff5733;
+            background-color: rgba(255, 255, 255, 0.18);
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(255, 230, 109, 0.3);
+        }
+
+        .item-vaga span {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+
+        .contagem-animada {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: #00ffaa;
+            font-weight: 800;
+            text-shadow: 0 0 15px rgba(0, 255, 170, 0.7), 0 0 20px rgba(0, 255, 170, 0.5);
+            letter-spacing: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .contagem-animada:hover {
+            transform: scale(1.1);
+        }
+
+        .tempo-espera {
+            font-size: 1em;
+            color: #a0a0a0;
+            margin-left: auto;
+            font-weight: 500;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .call-to-action {
+            margin-top: 40px;
+        }
+
+        .call-to-action a {
+            background-color: #e63946;
+            color: #fff;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .call-to-action a:hover {
+            background-color: #c92a38;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
+        }
+
+        .call-to-action a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            z-index: -1;
+            transform: skewX(-20deg);
+        }
+
+        .call-to-action a:hover::before {
+            left: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .vagas-wrapper {
+                flex-direction: column;
+            }
+            .painel-vagas {
+                flex: 1 1 auto;
+            }
+            .titulo-vagas {
+                font-size: 2em;
+            }
+            .item-vaga span {
+                font-size: 1.1em;
+            }
+            .contagem-animada {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .secao-vagas {
+                padding: 60px 15px;
+            }
+            .titulo-vagas {
+                font-size: 1.8em;
+            }
+            .aviso-vagas {
+                font-size: 0.95em;
+            }
+            .item-vaga {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            .item-vaga span {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            .contagem-animada, .tempo-espera {
+                width: 100%;
+                text-align: left;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="secao-vagas">
+    <div class="vagas-wrapper">
+
+        <div class="painel-vagas fade-in">
+            <h2 class="titulo-vagas">Vagas Disponíveis - Social Media</h2>
+            <p class="aviso-vagas">
+                Aviso: Para garantir a qualidade e atenção total, limitamos o número de clientes. Aproveite as últimas vagas!
+            </p>
+
+            <ul class="lista-vagas">
+                <li class="item-vaga">
+                    <span>Plano Reino Essencial</span>
+                    <span class="contagem-animada" data-target="5">0</span>
+                </li>
+                <li class="item-vaga">
+                    <span>Plano Reino Nobre</span>
+                    <span class="contagem-animada" data-target="7">0</span>
+                </li>
+                <li class="item-vaga">
+                    <span>Plano Império Absoluto</span>
+                    <span class="contagem-animada" data-target="3">0</span>
+                </li>
+            </ul>
+
+            <div class="call-to-action">
+                <a href="#">Fale Conosco</a>
+            </div>
+        </div>
+
+        <div class="painel-vagas fade-in">
+            <h2 class="titulo-vagas">Vagas Disponíveis - Sites</h2>
+            <p class="aviso-vagas">
+                Aviso: Para garantir a qualidade e atenção total, limitamos o número de projetos por mês. Aproveite as últimas vagas!
+            </p>
+
+            <ul class="lista-vagas">
+                <li class="item-vaga">
+                    <span>Site Landing Page</span>
+                    <span class="contagem-animada" data-target="5">0</span>
+                </li>
+                <li class="item-vaga">
+                    <span>Site Corporativo</span>
+                    <span class="contagem-animada" data-target="3">0</span>
+                </li>
+                <li class="item-vaga">
+                    <span>Loja Virtual</span>
+                    <span class="contagem-animada" data-target="1">0</span>
+                </li>
+            </ul>
+
+            <div class="call-to-action">
+                <a href="#">Fale Conosco</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const panels = document.querySelectorAll('.fade-in');
+        const counters = document.querySelectorAll('.contagem-animada');
+        
+        const panelObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.dataset.target;
+                    let current = 0;
+                    const increment = target / 200;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            entry.target.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            entry.target.innerText = target;
+                        }
+                    };
+
+                    updateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        panels.forEach(panel => panelObserver.observe(panel));
+        counters.forEach(counter => counterObserver.observe(counter));
+    });
+</script>
+
+
+
+
+
+
+<style>
+.px-6 {
+    padding-right: 0.5rem;
+}
+.p-12 {
+    padding: 1rem;
+}
+</style>
+
+
     <!-- Planos -->
     <section id="planos" class="py-32 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
         <!-- Background Effects -->
@@ -1623,7 +1998,308 @@
         </div>
     </div>
 </div>
+</div>
+</div>
 
+
+
+
+<!------------------------------------------------------------------------------------>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais do Topo e Título */
+        .secao-topo {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #0b0b1a;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animação de brilho de fundo */
+        .secao-topo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 230, 109, 0.15) 0%, transparent 70%);
+            animation: background-glow 12s infinite linear;
+            z-index: 0;
+            pointer-events: none;
+        }
+        @keyframes background-glow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .conteudo-topo {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .titulo-principal {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+            animation: text-pulse 3s infinite ease-in-out;
+            cursor: pointer;
+        }
+        .subtitulo-topo {
+            font-size: 1.5em;
+            font-weight: 500;
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+        .cta-topo {
+            background-color: #ff5733;
+            color: #fff;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 87, 51, 0.4);
+        }
+        .cta-topo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 87, 51, 0.6);
+        }
+
+        /* Animações */
+        @keyframes text-pulse {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(0, 255, 170, 0.5); }
+            50% { transform: scale(1.03); text-shadow: 0 0 25px rgba(0, 255, 170, 0.8), 0 0 40px rgba(0, 255, 170, 0.4); }
+        }
+
+        /* Seção da Lista de Profissões */
+        .secao-profissoes {
+            padding: 80px 20px;
+            background-color: #0b0b1a;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .profissoes-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .titulo-profissoes {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ff5733;
+            letter-spacing: 1px;
+        }
+        .subtitulo-profissoes {
+            font-size: 1.1em;
+            opacity: 0.8;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+        .lista-profissoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .categoria-profissoes {
+            background-color: rgba(26, 26, 46, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+        .categoria-profissoes:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        }
+        .titulo-categoria {
+            font-size: 1.8em;
+            color: #ffe66d;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .titulo-categoria::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            width: 40px;
+            height: 2px;
+            background-color: #ff5733;
+        }
+        .lista-itens {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .lista-itens li {
+            font-size: 1.1em;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .lista-itens li:last-child {
+            border-bottom: none;
+        }
+        .lista-itens li:hover {
+            color: #00ffaa;
+            transform: translateX(5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .titulo-principal {
+                font-size: 3em;
+            }
+            .subtitulo-topo {
+                font-size: 1.2em;
+            }
+        }
+        @media (max-width: 600px) {
+            .titulo-principal {
+                font-size: 2em;
+            }
+            .subtitulo-topo {
+                font-size: 1em;
+            }
+            .titulo-profissoes {
+                font-size: 2em;
+            }
+            .subtitulo-profissoes {
+                font-size: 1em;
+            }
+        }
+    </style>
+
+
+<section class="secao-profissoes">
+    <div class="profissoes-wrapper">
+        <h2 class="titulo-profissoes">Atendemos a Todas as Áreas</h2>
+        <p class="subtitulo-profissoes">Criamos conteúdo personalizado para as mais diversas profissões, garantindo que sua mensagem alcance o público certo.</p>
+
+        <div class="lista-profissoes-grid">
+            <div class="categoria-profissoes">
+                <h3 class="titulo-categoria">Saúde e Estética</h3>
+                <ul class="lista-itens">
+                    <li>Médico</li>
+                    <li>Dentista</li>
+                    <li>Psicólogo</li>
+                    <li>Nutricionista</li>
+                    <li>Fisioterapeuta</li>
+                    <li>Personal Trainer</li>
+                    <li>Esteticista</li>
+                    <li>Cabeleireiro(a)</li>
+                    <li>Maquiador(a)</li>
+                    <li>Dermatologista</li>
+                </ul>
+            </div>
+
+            <div class="categoria-profissoes">
+                <h3 class="titulo-categoria">Animais e Pet Shop</h3>
+                <ul class="lista-itens">
+                    <li>Veterinário</li>
+                    <li>Pet Shop</li>
+                    <li>Adestrador de Cães</li>
+                    <li>Banho e Tosa</li>
+                    <li>Criador de Animais</li>
+                    <li>Vendedor de Ração</li>
+                    <li>Cuidador de Animais</li>
+                    <li>Hospedagem Pet</li>
+                    <li>Passeador de Cães</li>
+                    <li>Consultor de Bem-Estar Animal</li>
+                </ul>
+            </div>
+
+            <div class="categoria-profissoes">
+                <h3 class="titulo-categoria">Serviços e Negócios</h3>
+                <ul class="lista-itens">
+                    <li>Corretor de Imóveis</li>
+                    <li>Contador</li>
+                    <li>Advogado</li>
+                    <li>Consultor Financeiro</li>
+                    <li>Chef de Cozinha</li>
+                    <li>Organizador de Eventos</li>
+                    <li>Professor</li>
+                    <li>Coach</li>
+                    <li>Arquiteto</li>
+                    <li>Designer de Interiores</li>
+                </ul>
+            </div>
+
+            <div class="categoria-profissoes">
+                <h3 class="titulo-categoria">Manutenção e Obras</h3>
+                <ul class="lista-itens">
+                    <li>Eletricista</li>
+                    <li>Mecânico</li>
+                    <li>Encanador</li>
+                    <li>Jardineiro</li>
+                    <li>Marceneiro</li>
+                    <li>Pintor</li>
+                    <li>Pedreiro</li>
+                    <li>Instalador de Ar Condicionado</li>
+                    <li>Técnico de Celular</li>
+                    <li>Desentupidor</li>
+                </ul>
+            </div>
+
+            <div class="categoria-profissoes">
+                <h3 class="titulo-categoria">Artes e Entretenimento</h3>
+                <ul class="lista-itens">
+                    <li>Fotógrafo</li>
+                    <li>Músico</li>
+                    <li>Artista Plástico</li>
+                    <li>Escritor</li>
+                    <li>Artesão</li>
+                    <li>Tatuador</li>
+                    <li>Ilustrador</li>
+                    <li>Apresentador de TV</li>
+                    <li>Ator / Atriz</li>
+                    <li>Diretor de Cinema</li>
+                </ul>
+            </div>
+
+            <div class="categoria-profissoes">
+                <h3 class="titulo-categoria">Varejo e Produtos</h3>
+                <ul class="lista-itens">
+                    <li>Loja de Roupas</li>
+                    <li>Joalheiro</li>
+                    <li>Floricultura</li>
+                    <li>Produtor de Orgânicos</li>
+                    <li>Padeiro</li>
+                    <li>Confeiteiro</li>
+                    <li>Cervejaria Artesanal</li>
+                    <li>Distribuidor de Alimentos</li>
+                    <li>Vendedor de Carros</li>
+                    <li>Empório</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------------------------------------------------------------->
 <!---------------------------------------------------------------------->
 
 
